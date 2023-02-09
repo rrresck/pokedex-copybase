@@ -4,4 +4,10 @@ module.exports = defineConfig({
     'vuetify'
   ],
 
+  vueCompilerOptions:
+  {
+    "extensions": [
+      ".vue"
+    ]
+  },
 })
