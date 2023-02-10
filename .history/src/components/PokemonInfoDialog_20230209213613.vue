@@ -80,13 +80,13 @@
 <script>
 import MoveMethodImage from "./MoveMethodImage.vue";
 import EvolutionChain from "./EvolutionChain.vue";
-import Stats from "./Stats.vue";
+import PokemonStats from "./PokemonStats.vue";
 import PokemonType from "./PokemonType.vue";
 export default {
   components: {
     MoveMethodImage,
     EvolutionChain,
-    Stats,
+    PokemonStats,
     PokemonType,
   },
   props: {
