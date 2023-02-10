@@ -37,7 +37,7 @@
             v-for="pokemon in filtered_pokemons"
             :key="pokemon.name"
           >
-            <PokemonCard v-if="condicao2()" :pokemon="pokemon" @clicked="show_pokemon" />
+            <PokemonCard v-if="condicao" :pokemon="pokemon" @clicked="show_pokemon" />
           </v-col>
         </v-row>
       </v-container>
@@ -79,8 +79,8 @@ export default {
         this.pokemons = response.data.results;
       });
   },
-
-  methods: {    
+  
+  methods: {
     show_pokemon(id) {
       axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
       .then((response) => {
@@ -89,9 +89,10 @@ export default {
       });
     },
 
-    condicao2(){
-      return this.search != ""
+    condicao(){
+      return this.show_dialog > true
     },
+ 
 
     get_move_level(move) {
       for (let version of move.version_group_details) {

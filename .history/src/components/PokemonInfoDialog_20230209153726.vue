@@ -69,6 +69,27 @@
           </v-expansion-panel>
         </v-expansion-panels>
 
+        <!-- <v-simple-table>
+          <template>
+            <thead>
+              <tr>
+                <th class="text-left">Level</th>
+                <th class="text-left">Method</th>
+                <th class="text-left">Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="move in moves" :key="move.name">
+                <td>
+                  <span v-show="move.level != 0">{{ move.level }}</span>
+                </td>
+                <td><MoveMethodImage :method="move.method" /></td>
+                <td>{{ move.name }}</td>
+              </tr>
+            </tbody>
+          </template>
+        </v-simple-table> -->
+
         <h2>Evolução</h2>
 
         <EvolutionChain :pokemon="selected_pokemon" />

@@ -80,17 +80,17 @@ export default {
       });
   },
 
-  methods: {    
+  methods: {
+    condicao2(){
+      return this.show_dialog = false
+    },
+    
     show_pokemon(id) {
       axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
       .then((response) => {
         this.selected_pokemon = response.data;
         this.show_dialog = !this.show_dialog;
       });
-    },
-
-    condicao2(){
-      return this.search != ""
     },
 
     get_move_level(move) {

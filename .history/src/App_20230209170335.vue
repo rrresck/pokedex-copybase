@@ -8,14 +8,11 @@
               :src="require('../src/assets/pokedex.png')"
               class="my-3"
               contain
-              height="300"
+              height="200"
             />
-            <v-img
-            :src="require('../src/assets/pokedex-name.png')"
-            class="my-3"
-            contain
-            height="200"
-          />
+            <h1 class="text-center yellow--text mb-2" style="font-size: 90rem font-family: 'Mulish', sans-serif;">
+              Pokedex
+            </h1>
             <h1 class="text-center yellow--text mb-8 font-family: 'Mulish', sans-serif;">
               Processo Seletivo
               <a class="black--text" href="https://copybase.com.br">COPYBASE</a>
@@ -26,7 +23,7 @@
         <v-text-field
           v-model="search"
           label="Pesquisar"
-          placeholder="Digite seu Pokemon preferido em minúsculas! Ex: chansey"
+          placeholder="Digite seu Pokemon preferido em minúsculas! Ex: pikachu"
           solo
         ></v-text-field>
 
@@ -37,7 +34,7 @@
             v-for="pokemon in filtered_pokemons"
             :key="pokemon.name"
           >
-            <PokemonCard v-if="condicao2()" :pokemon="pokemon" @clicked="show_pokemon" />
+            <PokemonCard :pokemon="pokemon" @clicked="show_pokemon" />
           </v-col>
         </v-row>
       </v-container>
@@ -55,7 +52,6 @@ import axios from "axios";
 
 import PokemonCard from "./components/PokemonCard.vue";
 import PokemonInfoDialog from "./components/PokemonInfoDialog.vue";
-
 export default {
   name: "App",
   components: {
@@ -79,18 +75,12 @@ export default {
         this.pokemons = response.data.results;
       });
   },
-
-  methods: {    
+  methods: {
     show_pokemon(id) {
-      axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
-      .then((response) => {
+      axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`).then((response) => {
         this.selected_pokemon = response.data;
         this.show_dialog = !this.show_dialog;
       });
-    },
-
-    condicao2(){
-      return this.search != ""
     },
 
     get_move_level(move) {

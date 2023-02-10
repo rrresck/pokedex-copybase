@@ -31,13 +31,13 @@
         ></v-text-field>
 
         <v-row>
-          <v-col
+          <v-col v-show="condicional"
             cols="5"
             md="2"
             v-for="pokemon in filtered_pokemons"
             :key="pokemon.name"
           >
-            <PokemonCard v-if="condicao2()" :pokemon="pokemon" @clicked="show_pokemon" />
+            <PokemonCard :pokemon="pokemon" @clicked="show_pokemon" />
           </v-col>
         </v-row>
       </v-container>
@@ -55,7 +55,6 @@ import axios from "axios";
 
 import PokemonCard from "./components/PokemonCard.vue";
 import PokemonInfoDialog from "./components/PokemonInfoDialog.vue";
-
 export default {
   name: "App",
   components: {
@@ -69,28 +68,17 @@ export default {
       search: "",
       show_dialog: false,
       selected_pokemon: null,
+      condicao:true,
     };
   },
 
-  mounted() {
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon?limit=498")
-      .then((response) => {
-        this.pokemons = response.data.results;
-      });
-  },
-
-  methods: {    
+  methods: {
     show_pokemon(id) {
       axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
       .then((response) => {
         this.selected_pokemon = response.data;
         this.show_dialog = !this.show_dialog;
       });
-    },
-
-    condicao2(){
-      return this.search != ""
     },
 
     get_move_level(move) {

@@ -90,7 +90,7 @@ export default {
     },
 
     condicao2(){
-      return this.search != ""
+      return this.show_dialog != false
     },
 
     get_move_level(move) {

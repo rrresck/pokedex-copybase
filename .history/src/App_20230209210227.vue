@@ -90,7 +90,7 @@ export default {
     },
 
     condicao2(){
-      return this.search != ""
+      return this.selected_pokemon != null
     },
 
     get_move_level(move) {

@@ -90,7 +90,7 @@ export default {
     },
 
     condicao2(){
-      return this.search != ""
+      return this.solo = true
     },
 
     get_move_level(move) {
