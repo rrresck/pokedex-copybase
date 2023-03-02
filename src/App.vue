@@ -18,7 +18,7 @@
           />
             <h1 class="text-center yellow--text mb-8 font-family: 'Mulish', sans-serif;">
               Processo Seletivo
-              <a class="black--text" href="https://copybase.com.br">COPYBASE</a>
+              <a class="black--text" href="https://copybase.com.br">COPYBASE!</a>
             </h1>
           </v-container>
         </v-row>
@@ -26,7 +26,7 @@
         <v-text-field
           v-model="search"
           label="Pesquisar"
-          placeholder="Digite seu Pokemon preferido em minúsculas! Ex: chansey"
+          placeholder="Digite o seu Pokemon preferido em minúsculas! Ex: chansey"
           solo
         ></v-text-field>
 
