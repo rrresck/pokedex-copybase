@@ -1,5 +1,5 @@
-// eslint-disable-next-line vue/no-multiple-template-root
 <template>
+  // eslint-disable-next-line vue/no-mutating-props
   <v-dialog v-model="show" width="800">
     <v-card v-if="selected_pokemon" class="px-4">
       <v-container>
@@ -91,6 +91,7 @@ export default {
     PokemonType,
   },
   props: {
+    show: Boolean,
     selected_pokemon: Object,
   },
   methods: {

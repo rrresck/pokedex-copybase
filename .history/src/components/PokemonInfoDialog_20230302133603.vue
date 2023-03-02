@@ -91,6 +91,7 @@ export default {
     PokemonType,
   },
   props: {
+    show: Boolean,
     selected_pokemon: Object,
   },
   methods: {
