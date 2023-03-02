@@ -3,12 +3,6 @@
       "ignores": ["Stats"]
     },
 
-  "vueCompilerOptions":
-{
-  "extensions": [
-    ".vue"
-  ]
-},
   "compilerOptions": {
     "target": "es6",
     "module": "esnext",
@@ -26,5 +20,13 @@
       "dom.iterable",
       "scripthost"
     ]
-  }
+  },
+
+  "vueCompilerOptions":
+  {
+    "extensions": [
+      ".vue",
+    ],
+    "target": 2.7
+  },
 }
